@@ -26,11 +26,10 @@ python3 -m http.server 8000
 ## Arborescence
 
 ```
-index.html          Page complète (11 sections)
+index.html          Page complète (10 sections)
 css/style.css       Design tokens + composants, mobile-first
 js/main.js          Menu mobile, FAQ, composition, scrollspy, liens WhatsApp
 assets/images/      Logo, favicon + emplacements des visuels attendus
-assets/videos/      Procédure d'intégration des embeds TikTok
 assets/icons/       Icônes / favicons
 ```
 
@@ -44,10 +43,9 @@ assets/icons/       Icônes / favicons
 6. Nos matelas (1, 2 et 3 places)
 7. Composition interne (schéma en 5 couches, interactif)
 8. Bénéfices
-9. Novex Confort en vidéo (emplacements TikTok)
-10. CTA final
-11. FAQ (accordion)
-12. Footer
+9. CTA final
+10. FAQ (accordion)
+11. Footer (dont les liens TikTok, Instagram et WhatsApp)
 
 ## Informations de contact
 
@@ -58,13 +56,13 @@ qu'à la demande de Novex Confort.
 - **Téléphone / WhatsApp** : +229 01 97 22 41 40
 - **E-mail** : novex.contact00@gmail.com
 - **Instagram** : [@Novex.Confort](https://www.instagram.com/novex.confort/)
+- **TikTok** : [@novex.confort](https://www.tiktok.com/@novex.confort)
 - **Livraison** : partout au Bénin
 
 ## Reste à fournir
 
 - **Visuels produit** — voir `assets/images/README.md` pour la liste des
   fichiers attendus et les emplacements déjà câblés.
-- **Liens TikTok** (3 vidéos) — voir `assets/videos/README.md`.
 
 Tant qu'un asset manque, la page affiche un placeholder propre indiquant le
 nom du fichier attendu, plutôt qu'une image générique.
@@ -92,3 +90,5 @@ Conversions API, SEO avancé, Schema.org, CRM, backend, paiement en ligne.
   `js/main.js`. Chaque CTA peut porter son propre message via
   l'attribut `data-wa-message`.
 - Palette et rythme vertical : bloc `:root` de `css/style.css`.
+- Les logos TikTok, Instagram et WhatsApp du footer sont les glyphes
+  officiels des marques, intégrés en SVG inline (aucune requête externe).

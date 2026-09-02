@@ -14,14 +14,13 @@
    10. Cartes « Pourquoi nous »
    11. À propos
    12. Catalogue produits
-   13. Vidéos
-   14. Composition interne
-   15. Bénéfices
-   16. CTA
-   17. FAQ
-   18. Footer & WhatsApp flottant
-   19. Animations
-   20. Responsive (mobile-first : min-width)
+   13. Composition interne
+   14. Bénéfices
+   15. CTA
+   16. FAQ
+   17. Footer & WhatsApp flottant
+   18. Animations
+   19. Responsive (mobile-first : min-width)
    ========================================================================== */
 
 /* ==========================================================================
@@ -877,91 +876,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .product-card__footer { padding: 16px 22px 22px; }
 
 /* ==========================================================================
-   13. VIDÉOS
-   ========================================================================== */
-/* Grille : 1 vidéo par ligne sur mobile, 2 côte à côte dès 768 px.
-   Aucun défilement horizontal, aucune carte partiellement visible. */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  width: 100%;
-  max-width: 420px;      /* une seule colonne : on garde une largeur lisible */
-  margin-inline: auto;
-}
-
-.video-card {
-  min-width: 0;          /* autorise la carte à rétrécir dans la grille */
-  width: 100%;
-}
-
-.video-card__frame {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  background: var(--surface-2);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Repli affiché avant le chargement de l'embed, et conservé si TikTok
-   est indisponible : un vrai lien vers la vidéo, jamais un placeholder. */
-.video-card__link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  aspect-ratio: 9 / 16;
-  width: 100%;
-  color: var(--primary-dark);
-  transition: background-color .2s var(--ease);
-}
-.video-card__link:hover { background: var(--primary-tint); }
-
-.video-card__play {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--primary-dark);
-  box-shadow: var(--shadow-md);
-  transition: transform .2s var(--ease);
-}
-.video-card__play svg { width: 26px; height: 26px; }
-.video-card__link:hover .video-card__play { transform: scale(1.06); }
-
-.video-card__link-label {
-  font-size: .875rem;
-  font-weight: 700;
-}
-
-/* Une fois l'embed injecté, TikTok gère sa propre hauteur. */
-.video-card.is-embedded .video-card__frame {
-  background: transparent;
-  box-shadow: none;
-}
-
-/* Garde-fous : le markup et le script TikTok imposent des largeurs
-   fixes (min-width: 325px) qui débordent sous 360 px. On les neutralise
-   pour que rien ne sorte jamais du conteneur. */
-.video-card blockquote.tiktok-embed,
-.video-card iframe {
-  display: block;
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  border: 0;
-}
-
-.video-card blockquote.tiktok-embed { min-height: 300px; }
-
-/* ==========================================================================
-   14. COMPOSITION INTERNE
+   13. COMPOSITION INTERNE
    Schéma SVG en couches + liste descriptive. Survoler ou activer une
    entrée met la couche correspondante en avant.
    ========================================================================== */
@@ -1065,7 +980,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .layer-item__body span { font-size: .875rem; color: var(--text-muted); }
 
 /* ==========================================================================
-   15. BÉNÉFICES
+   14. BÉNÉFICES
    ========================================================================== */
 .benefits {
   display: grid;
@@ -1102,7 +1017,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 
 /* ==========================================================================
-   16. CTA
+   15. CTA
    ========================================================================== */
 .cta {
   position: relative;
@@ -1149,7 +1064,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 
 /* ==========================================================================
-   17. FAQ
+   16. FAQ
    ========================================================================== */
 .faq {
   display: grid;
@@ -1258,7 +1173,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 
 /* ==========================================================================
-   18. FOOTER & WHATSAPP FLOTTANT
+   17. FOOTER & WHATSAPP FLOTTANT
    ========================================================================== */
 .site-footer {
   padding-block: 52px 28px;
@@ -1318,6 +1233,42 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .site-footer__col a { transition: color .18s var(--ease); }
 .site-footer__col a:hover { color: #fff; }
 
+/* Logos officiels des plateformes : discrets, sans carte ni fond.
+   Sélecteur préfixé pour l'emporter sur `.site-footer__col ul`. */
+.site-footer__col .socials {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: -10px;   /* aligne le premier glyphe sur le titre de colonne */
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;              /* cible tactile confortable */
+  height: 44px;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, .72);
+  transition: color .18s var(--ease), background-color .18s var(--ease),
+              transform .18s var(--ease);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  transform: scale(1.06);
+}
+
+.social-link:active { transform: scale(1); }
+
 .site-footer__bottom {
   display: flex;
   flex-wrap: wrap;
@@ -1348,7 +1299,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .wa-float:hover { background: var(--whatsapp-dark); transform: scale(1.06); }
 
 /* ==========================================================================
-   19. ANIMATIONS
+   18. ANIMATIONS
    ========================================================================== */
 [data-reveal] {
   opacity: 0;
@@ -1373,7 +1324,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 
 /* ==========================================================================
-   20. RESPONSIVE — mobile-first
+   19. RESPONSIVE — mobile-first
    ========================================================================== */
 
 /* ---- ≥ 480px : le CTA du header apparaît, grilles à 2 colonnes ---- */
@@ -1404,12 +1355,6 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Deux vidéos côte à côte */
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    max-width: none;
-  }
 
   .about { grid-template-columns: 1fr 1fr; gap: 48px; }
   .composition { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -1482,10 +1427,6 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   .about { grid-template-columns: .95fr 1.05fr; gap: 72px; }
   .media--inset { display: block; }
 
-  .video-grid {
-    gap: 28px;
-    max-width: 760px;   /* deux vidéos verticales : on évite le gigantisme */
-  }
 
   .faq { grid-template-columns: .85fr 1.15fr; gap: 56px; }
   .faq__head { position: sticky; top: calc(var(--header-h) + 24px); }
