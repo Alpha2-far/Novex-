@@ -1,0 +1,10 @@
+# Système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Aucune dépendance npm dans ce projet — le dossier ne doit pas apparaître
+node_modules/

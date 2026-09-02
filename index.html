@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Novex Confort — Vente de matelas à Cotonou, Bénin</title>
+  <meta name="description" content="Novex Confort, spécialiste de la vente de matelas à Cotonou. Matelas 1, 2 et 3 places en 20 cm et 25 cm, livraison partout au Bénin.">
+  <meta name="theme-color" content="#1552B8">
+
+  <!-- Open Graph — valeurs provisoires, à finaliser en phase SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Novex Confort">
+  <meta property="og:title" content="Novex Confort — Votre confort commence par le bon matelas">
+  <meta property="og:description" content="Matelas 1, 2 et 3 places — 20 cm et 25 cm. Livraison partout au Bénin.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+  <!-- Typographie : amélioration progressive, le stack système sert de repli -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- PHASE ULTÉRIEURE : emplacement réservé pour Meta Pixel / Google Analytics -->
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- ============================================================
+       HEADER PERSISTANT
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+
+      <a class="logo" href="#accueil" aria-label="Novex Confort — retour en haut de page">
+        <img src="assets/images/logo-novex-confort.png" alt="Novex Confort" width="384" height="160">
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#accueil">Accueil</a></li>
+          <li><a class="nav__link" href="#matelas">Nos matelas</a></li>
+          <li><a class="nav__link" href="#pourquoi-nous">Pourquoi nous</a></li>
+          <li><a class="nav__link" href="#a-propos">À propos</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary btn--sm js-wa"
+           href="https://wa.me/22997224140"
+           data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+           target="_blank" rel="noopener">Commander</a>
+
+        <button class="burger" type="button" id="burger"
+                aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile" hidden>
+      <ul class="mobile-nav__list">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#matelas">Nos matelas</a></li>
+        <li><a href="#pourquoi-nous">Pourquoi nous</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="btn btn--wa btn--block js-wa"
+         href="https://wa.me/22997224140"
+         data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+         target="_blank" rel="noopener">
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.45 3.42 1.32 4.9L2 22l5.4-1.42a9.8 9.8 0 0 0 4.64 1.18h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.75 13.9c-.24.68-1.4 1.3-1.93 1.35-.53.06-1.02.24-3.45-.72-2.93-1.15-4.78-4.2-4.92-4.4-.14-.2-1.17-1.57-1.17-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.2.32-.39.53-.19.2-.29.34-.19.53.1.2.53.92 1.14 1.49.78.73 1.44.96 1.64 1.06.2.1.32.08.44-.05.12-.14.51-.6.65-.8.14-.2.28-.17.47-.1.19.07 1.2.57 1.4.67.2.1.34.15.39.24.05.1.05.55-.19 1.23Z"/></svg>
+        </span>
+        Commander sur WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay" hidden></div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="accueil">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <p class="badge">Matelas · Cotonou, Bénin</p>
+
+          <h1 class="hero__title">Votre confort commence par le bon matelas.</h1>
+
+          <p class="hero__lead">
+            <!-- TEXTE PROVISOIRE — à réécrire en phase contenu -->
+            Novex Confort propose des matelas 1, 2 et 3 places en 20 cm et 25 cm,
+            avec livraison partout au Bénin. Texte de présentation provisoire.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--wa btn--lg js-wa"
+               href="https://wa.me/22997224140"
+               data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+               target="_blank" rel="noopener">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.45 3.42 1.32 4.9L2 22l5.4-1.42a9.8 9.8 0 0 0 4.64 1.18h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.75 13.9c-.24.68-1.4 1.3-1.93 1.35-.53.06-1.02.24-3.45-.72-2.93-1.15-4.78-4.2-4.92-4.4-.14-.2-1.17-1.57-1.17-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.2.32-.39.53-.19.2-.29.34-.19.53.1.2.53.92 1.14 1.49.78.73 1.44.96 1.64 1.06.2.1.32.08.44-.05.12-.14.51-.6.65-.8.14-.2.28-.17.47-.1.19.07 1.2.57 1.4.67.2.1.34.15.39.24.05.1.05.55-.19 1.23Z"/></svg>
+              </span>
+              Commander sur WhatsApp
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#matelas">Découvrir nos matelas</a>
+          </div>
+
+          <ul class="hero__trust">
+            <li>1, 2 &amp; 3 places</li>
+            <li>20 cm &amp; 25 cm</li>
+            <li>Livraison au Bénin</li>
+          </ul>
+        </div>
+
+        <div class="hero__media">
+          <figure class="media media--hero">
+            <div class="media__placeholder" data-label="IMAGE / VIDÉO HERO" data-hint="assets/images/hero-matelas.jpg · 1200×1400"></div>
+          </figure>
+
+          <!-- Carte flottante de réassurance -->
+          <aside class="float-card" aria-label="Formats disponibles">
+            <span class="float-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10h18M3 10v7m18-7v7M5 17h14M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>
+            </span>
+            <span class="float-card__text">
+              <strong>1, 2 &amp; 3 places</strong>
+              <small>20 cm &amp; 25 cm</small>
+            </span>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BANDEAU D'ACTION RAPIDE
+         Squelette UI — aucun backend. Le handler JS est isolé pour
+         pouvoir être branché plus tard (WhatsApp, formulaire, CRM).
+         ============================================================ -->
+    <section class="quickbar-section" aria-labelledby="quickbar-title">
+      <div class="container">
+        <h2 class="sr-only" id="quickbar-title">Demander des informations</h2>
+
+        <form class="quickbar" id="quickbar" novalidate>
+          <div class="quickbar__field">
+            <label for="qb-type">Type de matelas</label>
+            <select id="qb-type" name="type">
+              <option value="">Sélectionner</option>
+              <option value="20 cm">Matelas 20 cm</option>
+              <option value="25 cm">Matelas 25 cm</option>
+              <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+            </select>
+          </div>
+
+          <div class="quickbar__field">
+            <label for="qb-format">Format</label>
+            <select id="qb-format" name="format">
+              <option value="">Sélectionner</option>
+              <option value="1 place">1 place</option>
+              <option value="2 places">2 places</option>
+              <option value="3 places">3 places</option>
+            </select>
+          </div>
+
+          <div class="quickbar__field">
+            <label for="qb-ville">Ville / quartier</label>
+            <input id="qb-ville" name="ville" type="text" placeholder="Ex. Cotonou — Marina PK10" autocomplete="address-level2">
+          </div>
+
+          <div class="quickbar__submit">
+            <button class="btn btn--primary btn--block" type="submit">Demander les informations</button>
+          </div>
+        </form>
+
+        <p class="quickbar__note">Réponse rapide sur WhatsApp — aucune information n'est enregistrée pour l'instant.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         POURQUOI NOVEX CONFORT
+         ============================================================ -->
+    <section class="section" id="pourquoi-nous">
+      <div class="container">
+        <div class="section-head">
+          <p class="badge">Pourquoi nous choisir</p>
+          <h2 class="section-title">Le confort, pensé pour vous.</h2>
+          <p class="section-lead">Texte d'introduction provisoire, à préciser en phase contenu.</p>
+        </div>
+
+        <div class="grid grid--4" data-reveal-group>
+          <article class="card card--feature">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="4" rx="1.5"/><rect x="3" y="15" width="7" height="5" rx="1.5"/><rect x="14" y="11" width="7" height="9" rx="1.5"/></svg>
+            </span>
+            <h3 class="card__title">Plusieurs formats</h3>
+            <p class="card__text">Matelas 1, 2 et 3 places. Description provisoire.</p>
+          </article>
+
+          <article class="card card--feature">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v8H4z"/><path d="M4 12h16M2 8v8m20-8v8"/></svg>
+            </span>
+            <h3 class="card__title">20 cm &amp; 25 cm</h3>
+            <p class="card__text">Deux épaisseurs disponibles. Description provisoire.</p>
+          </article>
+
+          <article class="card card--feature">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+            </span>
+            <h3 class="card__title">Livraison partout au Bénin</h3>
+            <p class="card__text">Livraison disponible sur tout le territoire. Description provisoire.</p>
+          </article>
+
+          <article class="card card--feature">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 1 1-3.2-6.6"/><path d="M8 12l3 3 5-6"/></svg>
+            </span>
+            <h3 class="card__title">Commande simple</h3>
+            <p class="card__text">Un message WhatsApp suffit. Description provisoire.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         À PROPOS / EXPERTISE
+         ============================================================ -->
+    <section class="section section--surface" id="a-propos">
+      <div class="container about">
+
+        <div class="about__media">
+          <figure class="media media--tall">
+            <div class="media__placeholder" data-label="IMAGE À PROPOS" data-hint="assets/images/about-atelier.jpg · 900×1100"></div>
+          </figure>
+          <figure class="media media--inset">
+            <div class="media__placeholder media__placeholder--sm" data-label="IMAGE SECONDAIRE" data-hint="600×600"></div>
+          </figure>
+        </div>
+
+        <div class="about__content">
+          <p class="badge">À propos de Novex Confort</p>
+          <h2 class="section-title">Une attention particulière portée à votre confort.</h2>
+
+          <p class="about__text">
+            <!-- TEXTE PROVISOIRE -->
+            Paragraphe de présentation provisoire. Novex Confort est basée à Cotonou,
+            quartier Marina PK10, et accompagne ses clients dans le choix du matelas
+            adapté à leur usage et à leur budget.
+          </p>
+          <p class="about__text">
+            Second paragraphe provisoire, réservé à l'histoire de la marque et à
+            l'approche conseil, à rédiger en phase contenu.
+          </p>
+
+          <dl class="stats">
+            <div class="stats__item">
+              <dt>Formats</dt>
+              <dd>3</dd>
+            </div>
+            <div class="stats__item">
+              <dt>Épaisseurs</dt>
+              <dd>2</dd>
+            </div>
+            <div class="stats__item">
+              <dt>Livraison</dt>
+              <dd>Bénin</dd>
+            </div>
+          </dl>
+
+          <a class="btn btn--primary btn--lg" href="#matelas">Découvrir Novex Confort</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CATALOGUE — NOS MATELAS
+         ============================================================ -->
+    <section class="section" id="matelas">
+      <div class="container">
+        <div class="section-head">
+          <p class="badge">Nos matelas</p>
+          <h2 class="section-title">Un format adapté à chaque besoin.</h2>
+          <p class="section-lead">Sélection provisoire — les prix et dimensions exactes seront ajoutés après validation.</p>
+        </div>
+
+        <div class="grid grid--3" data-reveal-group>
+
+          <article class="product-card">
+            <figure class="media media--product">
+              <div class="media__placeholder" data-label="MATELAS 1 PLACE" data-hint="assets/images/matelas-1-place.jpg · 800×600"></div>
+            </figure>
+            <div class="product-card__body">
+              <p class="product-card__category">Matelas</p>
+              <h3 class="product-card__title">Matelas 1 place</h3>
+              <p class="product-card__text">Description courte provisoire, adaptée à un usage individuel.</p>
+
+              <ul class="specs">
+                <li><span>Format</span><strong>1 place</strong></li>
+                <li><span>Épaisseur</span><strong>20 cm / 25 cm</strong></li>
+                <li><span>Dimensions</span><strong>À compléter</strong></li>
+                <!-- EMPLACEMENT RÉSERVÉ : prix, caractéristiques, disponibilité -->
+              </ul>
+
+              <!-- <p class="product-card__price">Prix à communiquer</p> -->
+            </div>
+            <div class="product-card__footer">
+              <a class="btn btn--primary btn--block js-wa"
+                 href="https://wa.me/22997224140"
+                 data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur le matelas 1 place."
+                 target="_blank" rel="noopener">Commander</a>
+            </div>
+          </article>
+
+          <article class="product-card product-card--featured">
+            <span class="product-card__flag">Le plus demandé</span>
+            <figure class="media media--product">
+              <div class="media__placeholder" data-label="MATELAS 2 PLACES" data-hint="assets/images/matelas-2-places.jpg · 800×600"></div>
+            </figure>
+            <div class="product-card__body">
+              <p class="product-card__category">Matelas</p>
+              <h3 class="product-card__title">Matelas 2 places</h3>
+              <p class="product-card__text">Description courte provisoire, adaptée à un usage à deux.</p>
+
+              <ul class="specs">
+                <li><span>Format</span><strong>2 places</strong></li>
+                <li><span>Épaisseur</span><strong>20 cm / 25 cm</strong></li>
+                <li><span>Dimensions</span><strong>À compléter</strong></li>
+              </ul>
+            </div>
+            <div class="product-card__footer">
+              <a class="btn btn--primary btn--block js-wa"
+                 href="https://wa.me/22997224140"
+                 data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur le matelas 2 places."
+                 target="_blank" rel="noopener">Commander</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <figure class="media media--product">
+              <div class="media__placeholder" data-label="MATELAS 3 PLACES" data-hint="assets/images/matelas-3-places.jpg · 800×600"></div>
+            </figure>
+            <div class="product-card__body">
+              <p class="product-card__category">Matelas</p>
+              <h3 class="product-card__title">Matelas 3 places</h3>
+              <p class="product-card__text">Description courte provisoire, adaptée aux grands formats.</p>
+
+              <ul class="specs">
+                <li><span>Format</span><strong>3 places</strong></li>
+                <li><span>Épaisseur</span><strong>20 cm / 25 cm</strong></li>
+                <li><span>Dimensions</span><strong>À compléter</strong></li>
+              </ul>
+            </div>
+            <div class="product-card__footer">
+              <a class="btn btn--primary btn--block js-wa"
+                 href="https://wa.me/22997224140"
+                 data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur le matelas 3 places."
+                 target="_blank" rel="noopener">Commander</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION VIDÉO — placeholders 9:16
+         Les vraies vidéos seront placées dans assets/videos/
+         ============================================================ -->
+    <section class="section section--surface" id="videos">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="badge">En action</p>
+          <h2 class="section-title">Découvrez Novex Confort.</h2>
+          <p class="section-lead">Emplacements réservés — les vidéos seront intégrées ultérieurement.</p>
+        </div>
+
+        <div class="grid grid--videos" data-reveal-group>
+
+          <article class="video-card">
+            <div class="video-card__frame">
+              <div class="media__placeholder" data-label="VIDEO 01" data-hint="9:16 · assets/videos/video-01.mp4"></div>
+              <button class="video-card__play" type="button" aria-label="Lire la vidéo 01 (bientôt disponible)" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </button>
+            </div>
+            <div class="video-card__caption">
+              <h3 class="video-card__title">Titre provisoire 01</h3>
+              <p>Courte légende provisoire.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-card__frame">
+              <div class="media__placeholder" data-label="VIDEO 02" data-hint="9:16 · assets/videos/video-02.mp4"></div>
+              <button class="video-card__play" type="button" aria-label="Lire la vidéo 02 (bientôt disponible)" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </button>
+            </div>
+            <div class="video-card__caption">
+              <h3 class="video-card__title">Titre provisoire 02</h3>
+              <p>Courte légende provisoire.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-card__frame">
+              <div class="media__placeholder" data-label="VIDEO 03" data-hint="9:16 · assets/videos/video-03.mp4"></div>
+              <button class="video-card__play" type="button" aria-label="Lire la vidéo 03 (bientôt disponible)" disabled>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </button>
+            </div>
+            <div class="video-card__caption">
+              <h3 class="video-card__title">Titre provisoire 03</h3>
+              <p>Courte légende provisoire.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="section-foot">
+          <a class="btn btn--ghost" href="https://www.instagram.com/novex.confort/" target="_blank" rel="noopener">Voir plus sur Instagram</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+         ============================================================ -->
+    <section class="cta" id="commander">
+      <div class="cta__pattern" aria-hidden="true"></div>
+      <div class="container cta__inner">
+        <p class="badge badge--light">Commander</p>
+        <h2 class="cta__title">Prêt à choisir votre confort ?</h2>
+        <p class="cta__text">Texte court provisoire. Écrivez-nous, nous vous orientons vers le format adapté.</p>
+
+        <div class="cta__actions">
+          <a class="btn btn--wa btn--lg js-wa"
+             href="https://wa.me/22997224140"
+             data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+             target="_blank" rel="noopener">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.45 3.42 1.32 4.9L2 22l5.4-1.42a9.8 9.8 0 0 0 4.64 1.18h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.75 13.9c-.24.68-1.4 1.3-1.93 1.35-.53.06-1.02.24-3.45-.72-2.93-1.15-4.78-4.2-4.92-4.4-.14-.2-1.17-1.57-1.17-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.2.32-.39.53-.19.2-.29.34-.19.53.1.2.53.92 1.14 1.49.78.73 1.44.96 1.64 1.06.2.1.32.08.44-.05.12-.14.51-.6.65-.8.14-.2.28-.17.47-.1.19.07 1.2.57 1.4.67.2.1.34.15.39.24.05.1.05.55-.19 1.23Z"/></svg>
+            </span>
+            Commander sur WhatsApp
+          </a>
+          <a class="btn btn--light btn--lg" href="#matelas">Voir nos matelas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — accordion vanilla
+         ============================================================ -->
+    <section class="section" id="faq">
+      <div class="container faq">
+
+        <div class="faq__head">
+          <p class="badge">FAQ</p>
+          <h2 class="section-title">Les questions que vous vous posez.</h2>
+          <p class="section-lead">Réponses provisoires, à valider avant mise en ligne.</p>
+
+          <aside class="faq__help">
+            <p>Vous ne trouvez pas votre réponse&nbsp;?</p>
+            <a class="btn btn--primary btn--sm js-wa"
+               href="https://wa.me/22997224140"
+               data-wa-message="Bonjour Novex Confort, j'ai une question sur vos matelas."
+               target="_blank" rel="noopener">Nous écrire</a>
+          </aside>
+        </div>
+
+        <div class="faq__list" id="faq-list">
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">
+                <span>Quels formats de matelas proposez-vous&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — matelas 1 place, 2 places et 3 places.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2">
+                <span>Quelles épaisseurs sont disponibles&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — deux épaisseurs&nbsp;: 20 cm et 25 cm.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3">
+                <span>Livrez-vous partout au Bénin&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — la livraison est disponible partout au Bénin.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-4" id="faq-q-4">
+                <span>Comment commander&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — commande par WhatsApp au +229 97 22 41 40.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-5" id="faq-q-5">
+                <span>Où se trouve votre boutique&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-5" role="region" aria-labelledby="faq-q-5">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — Cotonou, quartier Marina PK10.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-item__heading">
+              <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-a-6" id="faq-q-6">
+                <span>Comment vous contacter&nbsp;?</span>
+                <span class="faq-item__chevron" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-item__panel" id="faq-a-6" role="region" aria-labelledby="faq-q-6">
+              <div class="faq-item__content">
+                <p>Réponse provisoire — par téléphone, WhatsApp, e-mail ou Instagram.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="site-footer__top">
+
+        <div class="site-footer__brand">
+          <span class="site-footer__logo">
+            <img src="assets/images/logo-novex-confort.png" alt="Novex Confort" width="384" height="160">
+          </span>
+          <p>Vente de matelas à Cotonou — formats 1, 2 et 3 places, épaisseurs 20 cm et 25 cm. Livraison partout au Bénin.</p>
+          <a class="btn btn--wa btn--sm js-wa"
+             href="https://wa.me/22997224140"
+             data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+             target="_blank" rel="noopener">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.45 3.42 1.32 4.9L2 22l5.4-1.42a9.8 9.8 0 0 0 4.64 1.18h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.75 13.9c-.24.68-1.4 1.3-1.93 1.35-.53.06-1.02.24-3.45-.72-2.93-1.15-4.78-4.2-4.92-4.4-.14-.2-1.17-1.57-1.17-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.2.32-.39.53-.19.2-.29.34-.19.53.1.2.53.92 1.14 1.49.78.73 1.44.96 1.64 1.06.2.1.32.08.44-.05.12-.14.51-.6.65-.8.14-.2.28-.17.47-.1.19.07 1.2.57 1.4.67.2.1.34.15.39.24.05.1.05.55-.19 1.23Z"/></svg>
+            </span>
+            Écrire sur WhatsApp
+          </a>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Navigation du pied de page">
+          <h2 class="site-footer__heading">Navigation</h2>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#matelas">Nos matelas</a></li>
+            <li><a href="#pourquoi-nous">Pourquoi nous</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__col">
+          <h2 class="site-footer__heading">Contact</h2>
+          <ul>
+            <li>Cotonou — Qt Marina PK10</li>
+            <li><a href="tel:+22997224140">+229 97 22 41 40</a></li>
+            <li><a href="mailto:novex.contact00@gmail.com">novex.contact00@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h2 class="site-footer__heading">Réseaux</h2>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/novex.confort/" target="_blank" rel="noopener">Instagram — @novex.confort</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="year">2026</span> Novex Confort. Tous droits réservés.</p>
+        <p class="site-footer__meta">Version squelette — contenu provisoire.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a class="wa-float js-wa"
+     href="https://wa.me/22997224140"
+     data-wa-message="Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas."
+     target="_blank" rel="noopener" aria-label="Écrire à Novex Confort sur WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.45 3.42 1.32 4.9L2 22l5.4-1.42a9.8 9.8 0 0 0 4.64 1.18h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2Zm5.75 13.9c-.24.68-1.4 1.3-1.93 1.35-.53.06-1.02.24-3.45-.72-2.93-1.15-4.78-4.2-4.92-4.4-.14-.2-1.17-1.57-1.17-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.65.5.24.58.8 1.98.87 2.12.07.14.12.31.02.5-.1.2-.2.32-.39.53-.19.2-.29.34-.19.53.1.2.53.92 1.14 1.49.78.73 1.44.96 1.64 1.06.2.1.32.08.44-.05.12-.14.51-.6.65-.8.14-.2.28-.17.47-.1.19.07 1.2.57 1.4.67.2.1.34.15.39.24.05.1.05.55-.19 1.23Z"/></svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
