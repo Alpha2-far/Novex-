@@ -1,17 +1,28 @@
 # assets/images
 
-Visuels à intégrer en phase suivante. Noms attendus par le squelette :
+## Présents
 
-| Fichier                     | Emplacement            | Format conseillé |
+| Fichier                     | Usage                          |
+|-----------------------------|--------------------------------|
+| `logo-novex-confort.png`    | Logo officiel (header, footer) |
+| `favicon.png`               | Icône d'onglet / mobile        |
+
+## Attendus — emplacements déjà câblés dans `index.html`
+
+Chaque emplacement affiche aujourd'hui un placeholder portant le nom du
+fichier attendu. Pour intégrer un visuel : déposer le fichier ici, puis
+remplacer le `<div class="media__placeholder">` correspondant par une
+balise `<img>` avec un `alt` descriptif.
+
+| Fichier                     | Section                | Format conseillé |
 |-----------------------------|------------------------|------------------|
-| `hero-matelas.jpg`          | Hero                   | 1200 × 1400      |
-| `about-atelier.jpg`         | À propos (principale)  | 900 × 1100       |
-| `about-secondaire.jpg`      | À propos (incrustée)   | 600 × 600        |
+| `hero-novex-matelas.jpg`    | Hero (visuel produit)  | 1200 × 1400      |
+| `about-novex.jpg`           | À propos (principale)  | 900 × 1100       |
+| `about-detail.jpg`          | À propos (incrustée)   | 600 × 600        |
 | `matelas-1-place.jpg`       | Catalogue              | 800 × 600        |
 | `matelas-2-places.jpg`      | Catalogue              | 800 × 600        |
 | `matelas-3-places.jpg`      | Catalogue              | 800 × 600        |
 | `og-cover.jpg`              | Open Graph             | 1200 × 630       |
 
-`logo-novex-confort.svg` et `logo-novex-confort-light.svg` (version footer)
-sont des logos provisoires : remplacer par le logo officiel en conservant
-les mêmes noms de fichiers.
+Le visuel du hero doit être la photo produit réelle de Novex Confort.
+Ne pas y substituer une image générique.

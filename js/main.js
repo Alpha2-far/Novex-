@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NOVEX CONFORT — main.js (phase squelette)
+   NOVEX CONFORT — main.js
    JavaScript vanilla, sans dépendance.
    --------------------------------------------------------------------------
    1. Configuration
@@ -8,8 +8,9 @@
    4. Accordion FAQ
    5. Header au scroll + navigation active
    6. Bandeau d'action rapide
-   7. Révélation au scroll
-   8. Divers
+   7. Composition interne
+   8. Révélation au scroll
+   9. Divers
    ========================================================================== */
 (function () {
   'use strict';
@@ -19,7 +20,7 @@
      Point unique à modifier pour le numéro et les messages par défaut.
      ====================================================================== */
   var CONFIG = {
-    whatsappNumber: '22997224140', // +229 97 22 41 40, format international sans « + »
+    whatsappNumber: '2290197224140', // +229 01 97 22 41 40, format international sans « + »
     defaultMessage: 'Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas.'
   };
 
@@ -210,21 +211,57 @@
       event.preventDefault();
 
       var data = new FormData(form);
-      var type = (data.get('type') || '').toString().trim();
       var format = (data.get('format') || '').toString().trim();
-      var ville = (data.get('ville') || '').toString().trim();
+      var epaisseur = (data.get('epaisseur') || '').toString().trim();
+      var zone = (data.get('zone') || '').toString().trim();
 
-      var parts = ['Bonjour Novex Confort, je souhaite des informations sur vos matelas.'];
+      var parts = ['Bonjour Novex Confort, je souhaite avoir des informations sur vos matelas.'];
       if (format) parts.push('Format : ' + format + '.');
-      if (type) parts.push('Épaisseur : ' + type + '.');
-      if (ville) parts.push('Livraison : ' + ville + '.');
+      if (epaisseur) parts.push('Épaisseur : ' + epaisseur + '.');
+      if (zone) parts.push('Zone : ' + zone + '.');
 
       window.open(buildWhatsAppUrl(parts.join(' ')), '_blank', 'noopener');
     });
   }
 
   /* ========================================================================
-     7. RÉVÉLATION AU SCROLL
+     7. COMPOSITION INTERNE
+     Met en avant la couche du schéma correspondant à l'entrée survolée,
+     activée au clavier ou cliquée.
+     ====================================================================== */
+  function initComposition() {
+    var svg = document.querySelector('.layers');
+    var items = document.querySelectorAll('.layer-item');
+
+    if (!svg || !items.length) return;
+
+    var layers = svg.querySelectorAll('.layer');
+
+    function highlight(name) {
+      svg.classList.toggle('has-active', Boolean(name));
+
+      Array.prototype.forEach.call(layers, function (layer) {
+        layer.classList.toggle('is-active', layer.getAttribute('data-layer') === name);
+      });
+
+      Array.prototype.forEach.call(items, function (item) {
+        item.classList.toggle('is-active', item.getAttribute('data-layer') === name);
+      });
+    }
+
+    Array.prototype.forEach.call(items, function (item) {
+      var name = item.getAttribute('data-layer');
+
+      item.addEventListener('mouseenter', function () { highlight(name); });
+      item.addEventListener('focus', function () { highlight(name); });
+      item.addEventListener('click', function () { highlight(name); });
+      item.addEventListener('mouseleave', function () { highlight(null); });
+      item.addEventListener('blur', function () { highlight(null); });
+    });
+  }
+
+  /* ========================================================================
+     8. RÉVÉLATION AU SCROLL
      ====================================================================== */
   function initReveal() {
     if (prefersReducedMotion) return;
@@ -285,7 +322,7 @@
   }
 
   /* ========================================================================
-     8. DIVERS
+     9. DIVERS
      ====================================================================== */
   function initYear() {
     var year = document.getElementById('year');
@@ -300,6 +337,7 @@
     initHeaderState();
     initScrollSpy();
     initQuickBar();
+    initComposition();
     initReveal();
     initYear();
   }

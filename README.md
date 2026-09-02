@@ -1,10 +1,12 @@
 # Novex Confort — Landing page
 
-Landing page de **Novex Confort**, vente de matelas à Cotonou (Bénin).
+Landing page de **Novex Confort** — *Le choix d'un sommeil de qualité.*
+Vente de matelas à Cotonou (Bénin).
 
-> **Phase actuelle : SQUELETTE.** La structure, le layout, les composants et
-> le responsive sont en place. Les textes, visuels, prix, le SEO et le
-> tracking seront traités dans une phase suivante.
+> **Phase 2 : contenu réel et assets.** Le contenu, le wording, les
+> informations produit et la direction artistique sont en place. Restent à
+> intégrer les visuels produit et les vidéos TikTok, puis la phase 3
+> (tracking, SEO, optimisation).
 
 ## Stack
 
@@ -24,40 +26,69 @@ python3 -m http.server 8000
 ## Arborescence
 
 ```
-index.html          Page complète (10 sections)
+index.html          Page complète (11 sections)
 css/style.css       Design tokens + composants, mobile-first
-js/main.js          Menu mobile, accordion FAQ, scrollspy, liens WhatsApp
-assets/images/      Visuels (logos provisoires inclus)
-assets/videos/      Vidéos 9:16 (emplacements réservés)
+js/main.js          Menu mobile, FAQ, composition, scrollspy, liens WhatsApp
+assets/images/      Logo, favicon + emplacements des visuels attendus
+assets/videos/      Procédure d'intégration des embeds TikTok
 assets/icons/       Icônes / favicons
 ```
 
 ## Sections
 
 1. Header persistant (sticky)
-2. Hero (split layout + carte flottante)
-3. Bandeau d'action rapide
-4. Pourquoi Novex Confort
-5. À propos / expertise
-6. Catalogue — nos matelas
-7. Novex Confort en vidéo
-8. CTA final
-9. FAQ (accordion)
-10. Footer
+2. Hero — « Le confort qui change vos nuits. »
+3. Bandeau de micro-conversion (format / épaisseur / zone)
+4. Pourquoi Novex Confort (4 cartes)
+5. À propos
+6. Nos matelas (1, 2 et 3 places)
+7. Composition interne (schéma en 5 couches, interactif)
+8. Bénéfices
+9. Novex Confort en vidéo (emplacements TikTok)
+10. CTA final
+11. FAQ (accordion)
+12. Footer
 
-## Points à finaliser
+## Informations de contact
 
-- Textes marketing définitifs (tous les textes actuels sont provisoires)
-- Visuels et vidéos réels (voir les `README.md` de `assets/`)
-- Prix, dimensions et disponibilité des matelas (emplacements déjà prévus
-  dans les cartes produit)
-- SEO complet et données structurées
-- Meta Pixel / Google Analytics — **volontairement absents**
-- Branchement du bandeau d'action rapide sur un formulaire ou un CRM
-  (aujourd'hui : ouverture d'une conversation WhatsApp pré-remplie)
+Ces données sont utilisées dans la page ; elles ne doivent être modifiées
+qu'à la demande de Novex Confort.
+
+- **Adresse** : Qt Marina PK10, Cotonou, Bénin
+- **Téléphone / WhatsApp** : +229 01 97 22 41 40
+- **E-mail** : novex.contact00@gmail.com
+- **Instagram** : [@Novex.Confort](https://www.instagram.com/novex.confort/)
+- **Livraison** : partout au Bénin
+
+## Reste à fournir
+
+- **Visuels produit** — voir `assets/images/README.md` pour la liste des
+  fichiers attendus et les emplacements déjà câblés.
+- **Liens TikTok** (3 vidéos) — voir `assets/videos/README.md`.
+
+Tant qu'un asset manque, la page affiche un placeholder propre indiquant le
+nom du fichier attendu, plutôt qu'une image générique.
+
+## Règles de contenu
+
+Le contenu ne mentionne que des informations communiquées par Novex Confort :
+formats (1, 2 et 3 places), épaisseurs (20 cm et 25 cm), composition
+(tissu respirant, mémoire de forme, mousse de confort, ressorts ensachés,
+mousse de soutien) et livraison au Bénin.
+
+Ne sont volontairement **pas** affichés, faute d'information confirmée :
+prix, dimensions en centimètres, délais de livraison, garantie, politique
+de retour, ancienneté de l'entreprise. Le wording évite également toute
+promesse de nature médicale.
+
+## Phase suivante (3)
+
+Volontairement absents à ce stade : Meta Pixel, Google Analytics,
+Conversions API, SEO avancé, Schema.org, CRM, backend, paiement en ligne.
 
 ## Configuration
 
-Le numéro WhatsApp et le message par défaut sont centralisés dans l'objet
-`CONFIG` en tête de `js/main.js`. La palette et le rythme vertical sont
-centralisés dans le bloc `:root` de `css/style.css`.
+- Numéro WhatsApp et message par défaut : objet `CONFIG` en tête de
+  `js/main.js`. Chaque CTA peut porter son propre message via
+  l'attribut `data-wa-message`.
+- Palette et rythme vertical : bloc `:root` de `css/style.css`.
