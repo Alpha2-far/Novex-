@@ -9,8 +9,9 @@
    5. Header au scroll + navigation active
    6. Bandeau d'action rapide
    7. Composition interne
-   8. Révélation au scroll
-   9. Divers
+   8. Vidéos TikTok
+   9. Révélation au scroll
+   10. Divers
    ========================================================================== */
 (function () {
   'use strict';
@@ -261,7 +262,123 @@
   }
 
   /* ========================================================================
-     8. RÉVÉLATION AU SCROLL
+     8. VIDÉOS TIKTOK
+     Intégration officielle. Les liens courts (vm.tiktok.com) ne contiennent
+     pas l'identifiant de la vidéo : on le résout via l'API oEmbed de TikTok,
+     qui renvoie le code d'intégration officiel. Si une carte porte déjà un
+     attribut data-tiktok-id, l'embed est construit directement, sans appel
+     réseau supplémentaire.
+
+     Chargement différé : rien n'est demandé à TikTok avant que la section
+     n'approche du viewport. En cas d'échec, le lien de repli visible dans
+     le HTML reste en place.
+     ====================================================================== */
+  function initTikTok() {
+    var grid = document.getElementById('video-grid');
+    if (!grid) return;
+
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.video-card[data-tiktok-url]'));
+    if (!cards.length || typeof window.fetch !== 'function') return;
+
+    var started = false;
+
+    function buildBlockquote(url, videoId) {
+      return '<blockquote class="tiktok-embed" cite="' + url +
+             '" data-video-id="' + videoId + '"><section>' +
+             '<a href="' + url + '" target="_blank" rel="noopener">Voir sur TikTok</a>' +
+             '</section></blockquote>';
+    }
+
+    /** Renvoie le HTML d'intégration d'une carte, ou null en cas d'échec. */
+    function resolve(card) {
+      var url = card.getAttribute('data-tiktok-url');
+      var videoId = card.getAttribute('data-tiktok-id');
+
+      if (videoId) {
+        return Promise.resolve({ card: card, html: buildBlockquote(url, videoId) });
+      }
+
+      return window.fetch('https://www.tiktok.com/oembed?url=' + encodeURIComponent(url))
+        .then(function (response) {
+          if (!response.ok) throw new Error('oEmbed ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          return { card: card, html: data && data.html ? data.html : null };
+        })
+        .catch(function () {
+          return { card: card, html: null };
+        });
+    }
+
+    /**
+     * embed.js peut ne jamais s'exécuter (bloqueur de contenu, réseau).
+     * Sans garde-fou, le blockquote resterait une zone vide : on remet
+     * alors le lien de repli, qui reste cliquable.
+     */
+    function restoreIfNotEmbedded(card, frame, fallback) {
+      window.setTimeout(function () {
+        if (frame.querySelector('iframe')) return;
+
+        frame.innerHTML = fallback;
+        card.classList.remove('is-embedded');
+      }, 6000);
+    }
+
+    function loadEmbedScript() {
+      if (document.getElementById('tiktok-embed-script')) return;
+
+      var script = document.createElement('script');
+      script.id = 'tiktok-embed-script';
+      script.async = true;
+      script.src = 'https://www.tiktok.com/embed.js';
+      document.body.appendChild(script);
+    }
+
+    /**
+     * Les embeds sont tous injectés avant le chargement du script :
+     * embed.js traite l'ensemble des blockquotes présents à son exécution,
+     * ce qui évite d'avoir à le réinitialiser.
+     */
+    function activate() {
+      if (started) return;
+      started = true;
+
+      Promise.all(cards.map(resolve)).then(function (results) {
+        var injected = false;
+
+        results.forEach(function (result) {
+          if (!result.html) return;
+
+          var frame = result.card.querySelector('.video-card__frame');
+          if (!frame) return;
+
+          restoreIfNotEmbedded(result.card, frame, frame.innerHTML);
+          frame.innerHTML = result.html;
+          result.card.classList.add('is-embedded');
+          injected = true;
+        });
+
+        if (injected) loadEmbedScript();
+      });
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      activate();
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+      observer.disconnect();
+      activate();
+    }, { rootMargin: '400px 0px' });
+
+    observer.observe(grid);
+  }
+
+  /* ========================================================================
+     9. RÉVÉLATION AU SCROLL
      ====================================================================== */
   function initReveal() {
     if (prefersReducedMotion) return;
@@ -322,7 +439,7 @@
   }
 
   /* ========================================================================
-     9. DIVERS
+     10. DIVERS
      ====================================================================== */
   function initYear() {
     var year = document.getElementById('year');
@@ -338,6 +455,7 @@
     initScrollSpy();
     initQuickBar();
     initComposition();
+    initTikTok();
     initReveal();
     initYear();
   }

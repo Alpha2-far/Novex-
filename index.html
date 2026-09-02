@@ -574,12 +574,12 @@
 
     <!-- ============================================================
          NOVEX CONFORT EN VIDÉO
-         Emplacements prêts pour les embeds TikTok officiels.
-         Pour intégrer une vidéo : renseigner data-tiktok-url sur le bloc
-         et remplacer le placeholder par le <blockquote class="tiktok-embed">
-         fourni par TikTok, puis charger https://www.tiktok.com/embed.js
+         Intégration TikTok officielle. Chaque carte porte l'URL de la
+         vidéo ; js/main.js récupère le code d'intégration via l'API
+         oEmbed de TikTok, puis charge embed.js une seule fois.
+         Le lien visible sert de repli si le script est indisponible.
          ============================================================ -->
-    <section class="section" id="videos">
+    <section class="section section--surface" id="videos">
       <div class="container">
         <div class="section-head section-head--center">
           <p class="badge">En action</p>
@@ -589,51 +589,32 @@
           </p>
         </div>
 
-        <div class="grid grid--videos" data-reveal-group>
-
-          <article class="video-card" data-tiktok-url="">
+        <ul class="video-grid" id="video-grid">
+          <li class="video-card" data-tiktok-url="https://vm.tiktok.com/ZN8YR3frX/">
             <div class="video-card__frame">
-              <div class="media__placeholder" data-label="Vidéo 01" data-hint="Embed TikTok à intégrer"></div>
-              <button class="video-card__play" type="button" aria-label="Vidéo 01 — bientôt disponible" disabled>
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-              </button>
+              <a class="video-card__link" href="https://vm.tiktok.com/ZN8YR3frX/" target="_blank" rel="noopener">
+                <span class="video-card__play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                </span>
+                <span class="video-card__link-label">Voir sur TikTok</span>
+              </a>
             </div>
-            <div class="video-card__caption">
-              <h3 class="video-card__title">Vidéo 01</h3>
-              <p>Titre à renseigner avec le lien TikTok.</p>
-            </div>
-          </article>
+          </li>
 
-          <article class="video-card" data-tiktok-url="">
+          <li class="video-card" data-tiktok-url="https://vm.tiktok.com/ZN8YR76bG/">
             <div class="video-card__frame">
-              <div class="media__placeholder" data-label="Vidéo 02" data-hint="Embed TikTok à intégrer"></div>
-              <button class="video-card__play" type="button" aria-label="Vidéo 02 — bientôt disponible" disabled>
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-              </button>
+              <a class="video-card__link" href="https://vm.tiktok.com/ZN8YR76bG/" target="_blank" rel="noopener">
+                <span class="video-card__play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                </span>
+                <span class="video-card__link-label">Voir sur TikTok</span>
+              </a>
             </div>
-            <div class="video-card__caption">
-              <h3 class="video-card__title">Vidéo 02</h3>
-              <p>Titre à renseigner avec le lien TikTok.</p>
-            </div>
-          </article>
-
-          <article class="video-card" data-tiktok-url="">
-            <div class="video-card__frame">
-              <div class="media__placeholder" data-label="Vidéo 03" data-hint="Embed TikTok à intégrer"></div>
-              <button class="video-card__play" type="button" aria-label="Vidéo 03 — bientôt disponible" disabled>
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-              </button>
-            </div>
-            <div class="video-card__caption">
-              <h3 class="video-card__title">Vidéo 03</h3>
-              <p>Titre à renseigner avec le lien TikTok.</p>
-            </div>
-          </article>
-
-        </div>
+          </li>
+        </ul>
 
         <p class="section-foot">
-          <a class="btn btn--ghost" href="https://www.instagram.com/novex.confort/" target="_blank" rel="noopener">Suivre @Novex.Confort</a>
+          <a class="btn btn--ghost" href="https://www.tiktok.com/@novex.confort" target="_blank" rel="noopener">Suivre @Novex.Confort</a>
         </p>
       </div>
     </section>

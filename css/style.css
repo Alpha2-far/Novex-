@@ -879,75 +879,86 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 /* ==========================================================================
    13. VIDÉOS
    ========================================================================== */
-/* Mobile : carrousel horizontal — pattern naturel pour du format 9:16,
-   évite une section de plusieurs milliers de pixels de haut. */
-.grid--videos {
-  grid-auto-flow: column;
-  grid-auto-columns: 74%;
-  gap: 14px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 8px;
-  scrollbar-width: thin;
+/* Grille : 1 vidéo par ligne sur mobile, 2 côte à côte dès 768 px.
+   Aucun défilement horizontal, aucune carte partiellement visible. */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 420px;      /* une seule colonne : on garde une largeur lisible */
+  margin-inline: auto;
 }
-
-.grid--videos > * { scroll-snap-align: start; }
 
 .video-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* Le libellé du placeholder remonte pour ne pas passer sous le bouton play */
-.video-card__frame .media__placeholder {
-  justify-content: flex-start;
-  padding-top: 28px;
+  min-width: 0;          /* autorise la carte à rétrécir dans la grille */
+  width: 100%;
 }
 
 .video-card__frame {
   position: relative;
-  aspect-ratio: 9 / 16;
   overflow: hidden;
+  width: 100%;
   border-radius: var(--radius-lg);
   background: var(--surface-2);
   box-shadow: var(--shadow-sm);
 }
 
+/* Repli affiché avant le chargement de l'embed, et conservé si TikTok
+   est indisponible : un vrai lien vers la vidéo, jamais un placeholder. */
+.video-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  color: var(--primary-dark);
+  transition: background-color .2s var(--ease);
+}
+.video-card__link:hover { background: var(--primary-tint); }
+
 .video-card__play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
-  border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, .92);
+  background: #fff;
   color: var(--primary-dark);
   box-shadow: var(--shadow-md);
-  transition: transform .2s var(--ease), background-color .2s var(--ease);
+  transition: transform .2s var(--ease);
 }
 .video-card__play svg { width: 26px; height: 26px; }
-.video-card__play:hover:not(:disabled) {
-  background: #fff;
-  transform: translate(-50%, -50%) scale(1.06);
-}
-.video-card__play:disabled { cursor: not-allowed; opacity: .8; }
+.video-card__link:hover .video-card__play { transform: scale(1.06); }
 
-.video-card__title {
-  font-size: 1.0625rem;
-  margin-bottom: 4px;
-}
-
-.video-card__caption p {
+.video-card__link-label {
   font-size: .875rem;
-  color: var(--text-muted);
+  font-weight: 700;
 }
+
+/* Une fois l'embed injecté, TikTok gère sa propre hauteur. */
+.video-card.is-embedded .video-card__frame {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Garde-fous : le markup et le script TikTok imposent des largeurs
+   fixes (min-width: 325px) qui débordent sous 360 px. On les neutralise
+   pour que rien ne sorte jamais du conteneur. */
+.video-card blockquote.tiktok-embed,
+.video-card iframe {
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border: 0;
+}
+
+.video-card blockquote.tiktok-embed { min-height: 300px; }
 
 /* ==========================================================================
    14. COMPOSITION INTERNE
@@ -1393,15 +1404,11 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Retour à une grille classique : plus de carrousel */
-  .grid--videos {
-    grid-auto-flow: row;
-    grid-auto-columns: auto;
-    grid-template-columns: repeat(3, 1fr);
+  /* Deux vidéos côte à côte */
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 22px;
-    overflow-x: visible;
-    scroll-snap-type: none;
-    padding-bottom: 0;
+    max-width: none;
   }
 
   .about { grid-template-columns: 1fr 1fr; gap: 48px; }
@@ -1475,10 +1482,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   .about { grid-template-columns: .95fr 1.05fr; gap: 72px; }
   .media--inset { display: block; }
 
-  .grid--videos {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
-    margin-inline: auto;
+  .video-grid {
+    gap: 28px;
+    max-width: 760px;   /* deux vidéos verticales : on évite le gigantisme */
   }
 
   .faq { grid-template-columns: .85fr 1.15fr; gap: 56px; }
